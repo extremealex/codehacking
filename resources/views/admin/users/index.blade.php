@@ -7,6 +7,7 @@
         <thead>
         <tr>
             <th>ID</th>
+            <th>Photo</th>
             <th>Name</th>
             <th>Email</th>
             <th>Role</th>
@@ -19,7 +20,10 @@
         @forelse ($users as $user)
             <tr>
                 <td>{{$user->id}}</td>
-                <td>{{$user->name}}</td>
+                {{--<td>{!! $user->photo ? "<img src=\"/images/" . htmlentities($user->photo->file) . "\">" : '<p>No Photo</p>' !!}</td>--}}
+                <td>@if ($user->photo) <img height="50" src="{{ $user->photo->file }}"> @else No Photo @endif</td>
+                <td><a href="{{route('admin.users.edit', $user->id)}}">{{$user->name}}</a></td>
+                </td>
                 <td>{{$user->email}}</td>
                 <td>{{$user->role->name ?? 'N/A'}}</td>
                 <td>{{$user->is_active ?'Active' : 'Inactive'}}</td>
