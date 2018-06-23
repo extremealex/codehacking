@@ -10,6 +10,7 @@ use App\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Session;
 use Throwable;
 
 class AdminUsersController extends Controller
@@ -85,6 +86,8 @@ class AdminUsersController extends Controller
 //            $photo->delete();
 //        }
 
+        Session::flash('created_user', 'The user has been created');
+
         return redirect(url('admin/users'));
     }
 
@@ -154,6 +157,8 @@ class AdminUsersController extends Controller
         $user->update($input);
         //$user->fill($input)->save();
 
+        Session::flash('updated_user', 'The user has been updated');
+
         return redirect('admin/users');
 
     }
@@ -166,6 +171,10 @@ class AdminUsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::findOrFail($id);
+        unlink(public_path() . $user->photo->file);
+        $user->delete();
+        Session::flash('deleted_user', 'The user has been deleted');
+        return redirect('admin/users');
     }
 }

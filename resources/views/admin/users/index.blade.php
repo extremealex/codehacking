@@ -2,6 +2,18 @@
 
 @section('content')
 
+    @if(Session::has('created_user'))
+        <p class="bg-danger">{{Session::get('created_user')}}</p>
+    @endif
+
+    @if(Session::has('updated_user'))
+        <p class="bg-danger">{{Session::get('updated_user')}}</p>
+    @endif
+
+    @if(Session::has('deleted_user'))
+        <p class="bg-danger">{{Session::get('deleted_user')}}</p>
+    @endif
+
     <h1>Admin\Users\Index</h1>
     <table class="table">
         <thead>

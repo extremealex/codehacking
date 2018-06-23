@@ -33,4 +33,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Photo::class);
     }
+
+    public function isAdmin()
+    {
+        return $this->role_id == 1 && $this->is_active == 1;
+    }
 }
