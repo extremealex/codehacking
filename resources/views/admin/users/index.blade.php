@@ -35,7 +35,6 @@
                 {{--<td>{!! $user->photo ? "<img src=\"/images/" . htmlentities($user->photo->file) . "\">" : '<p>No Photo</p>' !!}</td>--}}
                 <td>@if ($user->photo) <img height="50" src="{{ $user->photo->file }}"> @else No Photo @endif</td>
                 <td><a href="{{route('admin.users.edit', $user->id)}}">{{$user->name}}</a></td>
-                </td>
                 <td>{{$user->email}}</td>
                 <td>{{$user->role->name ?? 'N/A'}}</td>
                 <td>{{$user->is_active ?'Active' : 'Inactive'}}</td>

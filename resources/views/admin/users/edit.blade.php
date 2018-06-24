@@ -1,8 +1,4 @@
-{{--@include(Session)--}}
-
 @extends('layouts.admin')
-
-
 
 @section('content')
 
