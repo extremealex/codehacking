@@ -19,6 +19,7 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
+Route::get('/post/{id}', ['as' => 'home.post', 'uses' => 'AdminPostsController@post']);
 
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::resource('users', 'AdminUsersController');
@@ -27,7 +28,20 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 
     Route::resource('categories', 'AdminCatController');
 
-    Route::get('/', function () {
-        return view('admin.index');
-    });
+    Route::resource('media', 'AdminMediasController');
+
+//    Route::get('media/upload', ['as'=>'admin.media.upload', 'uses'=>'AdminMediasController@store']);  no need to change the URI to Upload, default create URI is good enough
+
+    Route::resource('comments', 'PostCommentsController');
+
+    Route::resource('comments/replies', 'CommentRepliesController');
+
+    Route::get('/', 'HomeController@admin');
+});
+
+
+Route::group(['middleware' => 'auth'], function () {
+
+    Route::post('comment/{comment_id}/reply', 'CommentRepliesController@createReply');
+
 });

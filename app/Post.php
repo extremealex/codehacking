@@ -4,8 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+//use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
+
 class Post extends Model
 {
+
+//    use Sluggable;
+//    use SluggableScopeHelpers;
+
     protected $fillable =
         [
             'user_id',
@@ -14,6 +20,16 @@ class Post extends Model
             'title',
             'body',
         ];
+
+
+//    public function sluggable()
+//    {
+//        return [
+//            'slug'=>[
+//                'source' => 'title'
+//            ]
+//        ];
+//    }
 
 
     public function user()
@@ -29,6 +45,11 @@ class Post extends Model
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
     }
 
 }

@@ -2,4 +2,22 @@
     padding-top: 0px;
 }
 
+#nested_comment {
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.comment-reply {
+    display: none;
+}
+
+#reply-box {
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+#comments-block {
+    margin-top: 120px;
+}
+
 /*# sourceMappingURL=app.css.map */
