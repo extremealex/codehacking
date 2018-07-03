@@ -7,6 +7,6 @@
   "mappings": "AAEA;EACE,iBAAiB,EAClB;;AAED;EACE,iBAAiB;EACjB,kBAAkB,EACnB;;AAED;EACE,cAAc,EACf;;AAED;EACE,iBAAiB;EACjB,kBAAkB,EACnB;;AAED;EACE,kBAAkB,EACnB",
   "file": "app.css",
   "sourcesContent": [
-    "// @import \"node_modules/bootstrap-sass/assets/stylesheets/bootstrap\";\n\n#admin-page {\n  padding-top: 0px;\n}\n\n#nested_comment{\n  margin-top: 30px;\n  margin-left: 30px;\n}\n\n.comment-reply{\n  display: none;\n}\n\n#reply-box{\n  margin-top: 20px;\n  margin-left: 10px;\n}\n\n#comments-block{\n  margin-top: 120px;\n}"
+    "// @import \"node_modules/bootstrap-sass/assets/stylesheets/bootstrap\";\n\n#admin-page {\n  padding-top: 0px;\n}\n\n#nested_comment {\n  margin-top: 30px;\n  margin-left: 30px;\n}\n\n.comment-reply {\n  display: none;\n}\n\n#reply-box {\n  margin-top: 20px;\n  margin-left: 10px;\n}\n\n#comments-block {\n  margin-top: 140px;\n}"
   ]
 }

@@ -55,6 +55,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
         'edit' => 'admin.media.edit',
     ]]);
 
+    Route::delete('delete/media', 'AdminMediasController@deleteMedia');
+
 //    Route::get('media/upload', ['as'=>'admin.media.upload', 'uses'=>'AdminMediasController@store']);  no need to change the URI to Upload, default create URI is good enough
 
     Route::resource('comments', 'PostCommentsController', ['names' => [
@@ -83,3 +85,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('comment/{comment_id}/reply', 'CommentRepliesController@createReply');
 
 });
+//
+//Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+//    \Unisharp\Laravelfilemanager\Lfm::routes();
+//});

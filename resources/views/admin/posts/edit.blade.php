@@ -39,13 +39,13 @@
                 @if($errors->has('body'))<p class="text-danger">{{$errors->first('body')}}</p>@endif
             </div>
             <div class="form-group">
-                {!! Form::submit('Update Post', null, ['class'=>'btn btn-primary col-sm-6']) !!}
+                {!! Form::submit('Update Post', ['class'=>'btn btn-primary col-sm-6']) !!}
             </div>
             {!! Form::close() !!}
 
             {!! Form::open(['method'=>'DELETE', 'action'=>['AdminPostsController@destroy', $post->id], 'class'=>'col-sm-6']) !!}
             <div class="form-group">
-                {!! Form::submit('Delete Post', null, ['class'=>'btn btn-danger']) !!}
+                {!! Form::submit('Delete Post', ['class'=>'btn btn-danger col-sm-12']) !!}
             </div>
 
             {!! Form::close() !!}

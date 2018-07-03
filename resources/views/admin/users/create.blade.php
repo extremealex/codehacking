@@ -48,7 +48,7 @@
     </div>
 
     <div class="form-group">
-        {!! Form::submit('Create User', null, ['class'=>'btn btn-primary']) !!}
+        {!! Form::submit('Create User',  ['class'=>'btn btn-primary']) !!}
     </div>
 
     {!! Form::close() !!}

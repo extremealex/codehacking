@@ -21,12 +21,12 @@
     <hr>
 
     <!-- Preview Image -->
-    <img class="img-responsive" src="{{$post->photo->file}}" alt="">
+    <img class="img-responsive" src="{{ $post->photo->file ?? '' }}" alt="">
 
     <hr>
 
     <!-- Post Content -->
-    <p>{{$post->body}}</p>
+    <p>{!! $post->body !!}</p>
     <hr>
     @if(Session::has('comment_message'))
         {{session('comment_message')}}
@@ -52,7 +52,7 @@
             </div>
 
             <div class="form-group">
-                {!! Form::submit('Submit comments', null, ['class'=>'btn btn-primary']) !!}
+                {!! Form::submit('Submit comments', ['class'=>'btn btn-primary']) !!}
             </div>
 
             {!! Form::close() !!}
@@ -112,7 +112,7 @@
                                         </div>
 
                                         <div class="form-group">
-                                            {!! Form::submit('Submit Reply', null, ['class'=>'btn btn-primary']) !!}
+                                            {!! Form::submit('Submit Reply', ['class'=>'btn btn-primary']) !!}
                                         </div>
 
                                         {!! Form::close() !!}
@@ -137,7 +137,7 @@
                     </div>
 
                     <div class="form-group">
-                        {!! Form::submit('Submit Reply', null, ['class'=>'btn btn-primary']) !!}
+                        {!! Form::submit('Submit Reply', ['class'=>'btn btn-primary']) !!}
                     </div>
 
                     {!! Form::close() !!}

@@ -2,6 +2,8 @@
 
 @section('content')
 
+    @include('includes.tinyeditor')
+
     <div class="row">
 
         {!! Form::open(['method'=>'POST', 'action'=>'AdminPostsController@store', 'files'=>true]) !!}
@@ -34,7 +36,7 @@
             @if($errors->has('body'))<p class="text-danger">{{$errors->first('body')}}</p>@endif
         </div>
         <div class="form-group">
-            {!! Form::submit('Post', null, ['class'=>'btn btn-primary']) !!}
+            {!! Form::submit('Post', ['class'=>'btn btn-primary']) !!}
         </div>
 
         {!! Form::close() !!}

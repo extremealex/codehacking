@@ -30,7 +30,7 @@
                     <td>{{ $post->user->name ?? '' }}</td>
                     <td>{{ $post->category->name ?? '' }}</td>
                     <td><a href="{{route('admin.posts.edit', $post->id) }}">{{ $post->title }}</a></td>
-                    <td>{{ $post->body}}</td>
+                    <td>{!! $post->body !!}</td>
                     <td><a href="{{route('home.post', $post->id)}}">View Post</a></td>
                     <td><a href="{{route('admin.comments.show', $post->id)}}">View Comments</a></td>
                     <td>{{ number_format($post->comments()->count()) }}</td>
